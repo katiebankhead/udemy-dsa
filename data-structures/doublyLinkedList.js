@@ -36,11 +36,18 @@ class DoublyLinkedList {
     pop() {
         if (!this.head) return undefined;
 
-        // locate tail and pen element
         let removedNode = this.tail;
-        let pen = this.tail.prev;
-        pen.next = null;
-        this.tail = pen;
+
+        if (this.length === 1) {
+            this.head = null;
+            this.tail = null;
+        }
+        else {
+            // locate tail and pen element
+            this.tail = removedNode.prev;
+            this.tail.next = null;
+            removedNode.prev = null;
+        }
 
         this.length -= 1;
         return removedNode;
@@ -54,3 +61,4 @@ list.push("abbie");
 list.push("avery");
 console.log(list)
 console.log(list.pop())
+console.log(list)
