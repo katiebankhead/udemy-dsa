@@ -1,3 +1,4 @@
+// helper function: sorts/combines two pre-sorted arrays
 function merge(arr1, arr2) {
     let arrFinal = [];
     let i = 0;
